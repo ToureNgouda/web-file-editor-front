@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+
+.namefile{
+    /* border-top:2px solid black;
+    border-bottom:2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black; */
+    text-align: center;
+   
+}
+.savebtn{
+    margin-top: 1%;
+    margin-left: 92%;
+}
+.content{
+    margin-top: 1%;
+}

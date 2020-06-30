@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
-.App {
-  text-align: center;
+
+.App{
+  margin-top: 5%;
+  margin-left: 25%;
+  width: 50%;
+  max-width: 0 auto;
 }
 
