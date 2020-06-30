@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import EditFile  from './EditFile';
 import './App.css';
 import { Button, Form, Input } from 'antd';
 import { editFileService } from './services/editFileService';
@@ -31,11 +30,9 @@ export default class App extends Component {
   let file = this.state.file;
   file.content = value;
   this.setState({ file });
-  console.log(this.state.file.content);
  }
  handleSubmit = ()=>{
   editFileService.saveContentFile(this.state.file.content).then(response=>{
-      
     if(response.status === 200){
       console.log("response file modified",response.data)
 
