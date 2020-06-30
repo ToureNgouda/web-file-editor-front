@@ -48,7 +48,7 @@ export default class App extends Component {
             {/* <EditFile file={this.state.file}/>  */}
             <Form onSubmitCapture={this.handleSubmit}>
                 <Input  className="namefile" value={this.state.file.name} />
-                <Input.TextArea rows={15} className="content" type="text" value={this.state.file.content} name="content" onChange={this.handleChange}/>
+                <Input.TextArea rows={20} className="content" type="text" value={this.state.file.content} name="content" onChange={this.handleChange}/>
                 <Button type="primary" htmlType="submit" className="savebtn" >
                     Save
                 </Button>
