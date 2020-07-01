@@ -16,7 +16,6 @@ export default class App extends Component {
 
  componentDidMount = ()=>{
     editFileService.getContentFile().then(response=>{
-      
       if(response.status === 200){
         console.log("response",response.data)
         this.setState({ file : response.data});
@@ -28,12 +27,16 @@ export default class App extends Component {
  handleChange = e =>{
   const { name, value } = e.target;
   let file = this.state.file;
-  file.content = value;
+  file = {
+    name:file.name,
+    content:value
+  };
   this.setState({ file });
  }
  handleSubmit = ()=>{
-  editFileService.saveContentFile(this.state.file.content).then(response=>{
+  editFileService.saveContentFile(this.state.file).then(response=>{
     if(response.status === 200){
+      this.setState({ file: response.data })
       console.log("response file modified",response.data)
 
       // this.setState({ file : response.data});
@@ -48,7 +51,7 @@ export default class App extends Component {
             {/* <EditFile file={this.state.file}/>  */}
             <Form onSubmitCapture={this.handleSubmit}>
                 <Input  className="namefile" value={this.state.file.name} />
-                <Input.TextArea rows={20} className="content" type="text" value={this.state.file.content} name="content" onChange={this.handleChange}/>
+                <Input.TextArea rows={25} className="content" type="text" value={this.state.file.content} name="content" onChange={this.handleChange}/>
                 <Button type="primary" htmlType="submit" className="savebtn" >
                     Save
                 </Button>
